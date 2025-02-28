@@ -6,7 +6,13 @@ const jwt = require("jsonwebtoken");
 const bcrypt = require("bcrypt");
 
 const app = express();
-app.use(cors());
+app.use(cors(
+  {
+    origin: [""],
+    methods: ["POST" , "GET"],
+    credentials: true
+  }
+));
 app.use(bodyParser.json());
 
 const SECRET = "your-secret-key";
